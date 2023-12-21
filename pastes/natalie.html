@@ -3,17 +3,17 @@
 <head>
     <meta charSet="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <link rel="shortcut icon" href="https://cdn.discordapp.com/attachments/1184971486805635174/1186406451980283964/IMG_5246.png?ex=6593221c&is=6580ad1c&hm=84253c71089a2f564df1d313935d5413c478943c8e08e642418f803184c9536f&" />
-    <title>Natalie</title>
+    <link rel="shortcut icon" href="https://cdn.discordapp.com/attachments/1184971486805635174/1186438081960742982/z.png?ex=65933f91&is=6580ca91&hm=b5b382d57260e0acdf9ec8f64fa250df1d2c17da56b92fd43d8c63c2eecff6ee&" />
+    <title>DiscordLeaks</title>
     <meta name="robots" content="index,follow" />
-    <meta name="description" content="iew the current paste of Natalie on discordleaks.lol" />
+    <meta name="description" content="DiscordLeaks is a of course leaking service for the communication-platform Discord." />
     <meta name="twitter:card" content="player cards" />
     <meta name="twitter:site" content="https://discordleaks.lol" />
     <meta property="og:title" content="DiscordLeaks" />
     <meta content="#fdfdfd" data-react-helmet="true" name="theme-color">
-    <meta property="og:description" content="View the current paste of Natalie on discordleaks.lol" />
+    <meta property="og:description" content="DiscordLeaks is a of course leaking service for the communication-platform Discord." />
     <meta property="og:url" content="https://discordleaks.lol" />
-    <meta property="og:image" content="https://cdn.discordapp.com/attachments/1184971486805635174/1186406451980283964/IMG_5246.png?ex=6593221c&is=6580ad1c&hm=84253c71089a2f564df1d313935d5413c478943c8e08e642418f803184c9536f&" />
+    <meta property="og:image" content="https://cdn.discordapp.com/attachments/1184971486805635174/1186438081960742982/z.png?ex=65933f91&is=6580ca91&hm=b5b382d57260e0acdf9ec8f64fa250df1d2c17da56b92fd43d8c63c2eecff6ee&" />
     <meta property="og:image:type" content="image/png" />
     <meta property="og:image:width" content="500" />
     <meta property="og:image:height" content="500" />
@@ -55,22 +55,25 @@
             max-height: 200px;
             object-fit: cover;
             margin: 5px;
+            cursor: pointer;
         }
 
-        #geolocation {
-            margin-bottom: 20px;
+        /* Hide the lightbox initially */
+        #lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
         }
 
-        #geolocation p,
-        #geolocation a {
-            display: inline;
-            margin: 0;
-            color: #fff;
-        }
-
-        #geolocation a {
-            color: #afafaf;
-            text-decoration: none;
+        #lightbox img {
+            max-width: 80%;
+            max-height: 80%;
         }
     </style>
 </head>
@@ -90,11 +93,28 @@
     </div>
     <div id="image-collage">
         <div> </div>
-        <img src="https://cdn.discordapp.com/attachments/1184971486805635174/1186406451980283964/IMG_5246.png?ex=6593221c&is=6580ad1c&hm=84253c71089a2f564df1d313935d5413c478943c8e08e642418f803184c9536f&" alt="1">
-        <img src="https://cdn.discordapp.com/attachments/1184971486805635174/1186406451980283964/IMG_5246.png?ex=6593221c&is=6580ad1c&hm=84253c71089a2f564df1d313935d5413c478943c8e08e642418f803184c9536f&" alt="2">
-        <img src="https://cdn.discordapp.com/attachments/1184971486805635174/1186406451980283964/IMG_5246.png?ex=6593221c&is=6580ad1c&hm=84253c71089a2f564df1d313935d5413c478943c8e08e642418f803184c9536f&" alt="3">
+        <img src="https://cdn.discordapp.com/attachments/1184971486805635174/1186406451980283964/IMG_5246.png?ex=6593221c&is=6580ad1c&hm=84253c71089a2f564df1d313935d5413c478943c8e08e642418f803184c9536f&" alt="1" onclick="openLightbox('https://cdn.discordapp.com/attachments/1184971486805635174/1186406451980283964/IMG_5246.png?ex=6593221c&is=6580ad1c&hm=84253c71089a2f564df1d313935d5413c478943c8e08e642418f803184c9536f&')">
+        <img src="https://cdn.discordapp.com/attachments/1184971486805635174/1186442971059585125/IMG_0794.png?ex=6593441f&is=6580cf1f&hm=44f3c048dcdd8bccb9ca514d9af756d180bdc0a876709fbc783a01fe78de98bd&" alt="2" onclick="openLightbox('https://cdn.discordapp.com/attachments/1184971486805635174/1186442971059585125/IMG_0794.png?ex=6593441f&is=6580cf1f&hm=44f3c048dcdd8bccb9ca514d9af756d180bdc0a876709fbc783a01fe78de98bd')">
+        <img src="https://cdn.discordapp.com/attachments/1184971486805635174/1186443155386662953/image.png?ex=6593444b&is=6580cf4b&hm=67fb1d4b112d7372ab7ce8ef84f7b171c900ba9394944ccb3adb4a3fcdba799e&" alt="3" onclick="openLightbox('https://cdn.discordapp.com/attachments/1184971486805635174/1186443155386662953/image.png?ex=6593444b&is=6580cf4b&hm=67fb1d4b112d7372ab7ce8ef84f7b171c900ba9394944ccb3adb4a3fcdba799e')">
+    </div>
+    <div id="lightbox" onclick="closeLightbox()">
+        <!-- Lightbox content will be inserted here -->
     </div>
 
     <a href="https://discordleaks.lol" target="_blank">Return Home</a>
+
+    <script>
+        function openLightbox(imageUrl) {
+            const lightbox = document.getElementById('lightbox');
+            const content = '<img src="' + imageUrl + '" alt="Lightbox Image">';
+            lightbox.innerHTML = content;
+            lightbox.style.display = 'flex';
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.style.display = 'none';
+        }
+    </script>
 </body>
 </html>
