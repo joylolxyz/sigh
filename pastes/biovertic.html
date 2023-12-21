@@ -18,6 +18,7 @@
     <meta property="og:image:width" content="500" />
     <meta property="og:image:height" content="500" />
     <meta property="og:locale" content="en" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
     <style>
         body {
             margin: 0;
@@ -34,31 +35,34 @@
         }
 
         #title {
-            font-size: 36px;
+            font-size: 2em;
             font-weight: bold;
             margin-bottom: 20px;
         }
 
         #description {
-            max-width: 600px;
+            max-width: 80%;
             margin-bottom: 20px;
         }
 
         #image-collage {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             align-items: center;
         }
 
-        #image-collage img {
-            max-width: 100%;
-            max-height: 200px;
-            object-fit: cover;
+        #image-collage a {
+            width: 100%; /* Make the links fill the width */
             margin: 5px;
-            cursor: pointer;
         }
 
-        /* Hide the lightbox initially */
+        #image-collage img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
         #lightbox {
             display: none;
             position: fixed;
@@ -79,42 +83,31 @@
 </head>
 <body>
 
-    <div id="title">Natalie "Dickens"</div>
+    <div id="title">Biovertic</div>
 
     <div id="description">
-        <p>IP Address: 92.28.211.234</p>
-        <p>Address: 58 Nettleden Ave, Wembley HA9 6DR</p>
-        <p>Coordinates: 51°33'00.0"N 0°16'59.9"W</p>
-        <div id="geolocation">
-            <p>Geolocation: GB (United Kingdom), B5, Brent, HA0 Wembley - </p>
-            <a href="https://google.com/maps/?q=51.549999,-0.283300&ll=51.549999,-0.283300&z=5" target="_blank">Google Maps</a>
-        </div>
-        <p>Provider: TalkTalk Communications Limited</p>
+        <p>There's not really a lot I know, it's just funny screenshots</p>
     </div>
     <div id="image-collage">
-        <div> </div>
-        <img src="https://cdn.discordapp.com/attachments/1184971486805635174/1186406451980283964/IMG_5246.png?ex=6593221c&is=6580ad1c&hm=84253c71089a2f564df1d313935d5413c478943c8e08e642418f803184c9536f&" alt="1" onclick="openLightbox('https://cdn.discordapp.com/attachments/1184971486805635174/1186406451980283964/IMG_5246.png?ex=6593221c&is=6580ad1c&hm=84253c71089a2f564df1d313935d5413c478943c8e08e642418f803184c9536f&')">
-        <img src="https://cdn.discordapp.com/attachments/1184971486805635174/1186442971059585125/IMG_0794.png?ex=6593441f&is=6580cf1f&hm=44f3c048dcdd8bccb9ca514d9af756d180bdc0a876709fbc783a01fe78de98bd&" alt="2" onclick="openLightbox('https://cdn.discordapp.com/attachments/1184971486805635174/1186442971059585125/IMG_0794.png?ex=6593441f&is=6580cf1f&hm=44f3c048dcdd8bccb9ca514d9af756d180bdc0a876709fbc783a01fe78de98bd')">
-        <img src="https://cdn.discordapp.com/attachments/1184971486805635174/1186443155386662953/image.png?ex=6593444b&is=6580cf4b&hm=67fb1d4b112d7372ab7ce8ef84f7b171c900ba9394944ccb3adb4a3fcdba799e&" alt="3" onclick="openLightbox('https://cdn.discordapp.com/attachments/1184971486805635174/1186443155386662953/image.png?ex=6593444b&is=6580cf4b&hm=67fb1d4b112d7372ab7ce8ef84f7b171c900ba9394944ccb3adb4a3fcdba799e')">
-    </div>
-    <div id="lightbox" onclick="closeLightbox()">
-        <!-- Lightbox content will be inserted here -->
+        <a href="https://cdn.discordapp.com/attachments/1184971486805635174/1186444229472428083/IMG_3801.png?ex=6593454b&is=6580d04b&hm=545e7967bae8b61eb29a7b17a62f7ac0eb566a2d894558ac6a9d0fca2a1ff8d9&" data-lightbox="gallery" data-title="Image 1">
+            <img src="https://cdn.discordapp.com/attachments/1184971486805635174/1186444229472428083/IMG_3801.png?ex=6593454b&is=6580d04b&hm=545e7967bae8b61eb29a7b17a62f7ac0eb566a2d894558ac6a9d0fca2a1ff8d9&" alt="1">
+        </a>
+        <a href="https://cdn.discordapp.com/attachments/1184971486805635174/1186444229791187025/IMG_3802.png?ex=6593454b&is=6580d04b&hm=6bf239552c119219e60719547e610c9339c301d9193fab17844ad846092cf09d&" data-lightbox="gallery" data-title="Image 2">
+            <img src="https://cdn.discordapp.com/attachments/1184971486805635174/1186444229791187025/IMG_3802.png?ex=6593454b&is=6580d04b&hm=6bf239552c119219e60719547e610c9339c301d9193fab17844ad846092cf09d&" alt="2">
+        </a>
+        <a href="https://cdn.discordapp.com/attachments/1184971486805635174/1186444230529392710/IMG_3849.png?ex=6593454b&is=6580d04b&hm=a3cfd12c76320cbd38bae521c5ce3a0bace7843d095d08354462525951c75b67&" data-lightbox="gallery" data-title="Image 3">
+            <img src="https://cdn.discordapp.com/attachments/1184971486805635174/1186444230529392710/IMG_3849.png?ex=6593454b&is=6580d04b&hm=a3cfd12c76320cbd38bae521c5ce3a0bace7843d095d08354462525951c75b67&" alt="3">
+        </a>
+        <a href="https://cdn.discordapp.com/attachments/1184971486805635174/1186444230940426320/IMG_3867.png?ex=6593454b&is=6580d04b&hm=424d73aafb678f73d4a2d9039363020c90469f8baa3ba480bbd04d6eda0680dc&" data-lightbox="gallery" data-title="Image 4">
+            <img src="https://cdn.discordapp.com/attachments/1184971486805635174/1186444230940426320/IMG_3867.png?ex=6593454b&is=6580d04b&hm=424d73aafb678f73d4a2d9039363020c90469f8baa3ba480bbd04d6eda0680dc&" alt="4">
+        </a>
+        <a href="https://cdn.discordapp.com/attachments/1177302606792626206/1186444636215058462/image.png?ex=659345ac&is=6580d0ac&hm=b1eaeec4bf47883b0b146ec7a27d07da50013b784107d23695ff2d0b44812071&" data-lightbox="gallery" data-title="Image 5">
+            <img src="https://cdn.discordapp.com/attachments/1177302606792626206/1186444636215058462/image.png?ex=659345ac&is=6580d0ac&hm=b1eaeec4bf47883b0b146ec7a27d07da50013b784107d23695ff2d0b44812071&" alt="5">
+        </a>
     </div>
 
     <a href="https://discordleaks.lol" target="_blank">Return Home</a>
 
-    <script>
-        function openLightbox(imageUrl) {
-            const lightbox = document.getElementById('lightbox');
-            const content = '<img src="' + imageUrl + '" alt="Lightbox Image">';
-            lightbox.innerHTML = content;
-            lightbox.style.display = 'flex';
-        }
-
-        function closeLightbox() {
-            const lightbox = document.getElementById('lightbox');
-            lightbox.style.display = 'none';
-        }
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
 </body>
 </html>
